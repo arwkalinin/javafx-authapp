@@ -8,11 +8,11 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxsqlproject.Controller">
    <children>
-      <AnchorPane layoutY="90.0" prefHeight="310.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
+      <AnchorPane fx:id="passwordField" layoutY="90.0" prefHeight="310.0" prefWidth="700.0" style="-fx-background-color: #fafafa;">
          <children>
-            <TextField layoutX="229.0" layoutY="99.0" prefHeight="25.0" prefWidth="245.0" promptText="username" style="-fx-border-color: silver; -fx-border-radius: 5;">
+            <TextField fx:id="loginField" layoutX="229.0" layoutY="99.0" prefHeight="25.0" prefWidth="245.0" promptText="username" style="-fx-border-color: silver; -fx-border-radius: 5;">
                <font>
                   <Font name="Lucida Console" size="20.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Font name="Lucida Console" size="19.0" />
                </font>
             </Label>
-            <Button layoutX="268.0" layoutY="211.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="166.0" style="-fx-background-color: #F39C63;" text="LOGIN" textFill="WHITE">
+            <Button fx:id="loginButton" layoutX="268.0" layoutY="211.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="166.0" style="-fx-background-color: #F39C63;" text="LOGIN" textFill="WHITE">
                <font>
                   <Font name="Lucida Console" size="28.0" />
                </font>
@@ -39,7 +39,7 @@
             <Font name="Impact" size="53.0" />
          </font>
       </Label>
-      <Button layoutX="561.0" layoutY="15.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #F39C63;" text="Register" textFill="WHITE">
+      <Button fx:id="registerButton" layoutX="561.0" layoutY="15.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="125.0" style="-fx-background-color: #F39C63;" text="Register" textFill="WHITE">
          <font>
             <Font name="Lucida Console" size="17.0" />
          </font>
