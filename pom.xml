@@ -128,7 +128,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.fxsqlproject/com.example.fxsqlproject.HelloApplication</mainClass>
+                            <mainClass>com.example.fxsqlproject/com.example.fxsqlproject.Main</mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
                             <jlinkImageName>app</jlinkImageName>
