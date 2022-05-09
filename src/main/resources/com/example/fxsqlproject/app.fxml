@@ -6,21 +6,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="578.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxsqlproject.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="578.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxsqlproject.HomeController">
     <children>
         <AnchorPane fx:id="passwordField" layoutX="1.0" layoutY="109.0" prefHeight="359.0" prefWidth="578.0" style="-fx-background-color: #fafafa;">
             <children>
             <ImageView fitHeight="361.0" fitWidth="579.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../java/assets/serene-dusk-anime-aesthetic-8dbiy62xqu6gpu59.jpg" />
+                  <Image url="@../../../../assets/serene-dusk-anime-aesthetic-8dbiy62xqu6gpu59.jpg" />
                </image>
             </ImageView>
             </children>
         </AnchorPane>
-        <Label layoutX="205.0" layoutY="27.0" prefHeight="66.0" prefWidth="169.0" text="Hello! :)" textAlignment="CENTER" textFill="WHITE">
+        <Label layoutX="136.0" layoutY="21.0" prefHeight="66.0" prefWidth="169.0" text="Hello! :)" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Impact" size="53.0" />
             </font>
         </Label>
+      <ImageView fitHeight="108.0" fitWidth="127.0" layoutX="451.0">
+         <image>
+            <Image url="@../../../../assets/111-1110978_house-icon-flat-home-png-icon-transparent-png.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
