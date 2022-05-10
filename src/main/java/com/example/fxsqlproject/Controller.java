@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -20,7 +21,7 @@ public class Controller {
     private TextField loginField;
 
     @FXML
-    private AnchorPane passwordField;
+    private PasswordField passField;
 
     @FXML
     private Button registerButton;
@@ -28,7 +29,13 @@ public class Controller {
     @FXML
     void initialize() {
         loginButton.setOnAction(event -> {
-            System.out.println("You clicked on loginButton.");
+            String usernameInput = loginField.getText().trim();
+            String passwordInput = passField.getText().trim();
+
+            if (!usernameInput.equals("") && !passwordInput.equals(""))
+                loginUser(usernameInput, passwordInput);
+            else
+                System.out.println("Please, enter username and password.");
         });
 
         registerButton.setOnAction(event -> {
@@ -47,6 +54,10 @@ public class Controller {
             stage.showAndWait();
 
         });
+    }
+
+    private void loginUser(String usernameInput, String passwordInput) {
+        System.out.println("You logged as " + usernameInput + " and " + passwordInput);
     }
 
 

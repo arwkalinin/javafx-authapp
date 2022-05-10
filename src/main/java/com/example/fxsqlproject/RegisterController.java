@@ -10,7 +10,7 @@ import javafx.scene.layout.AnchorPane;
 public class RegisterController {
 
     @FXML
-    private PasswordField addressField;
+    private TextField addressField;
 
     @FXML
     private TextField nameField;
@@ -31,9 +31,20 @@ public class RegisterController {
     private CheckBox sexMaleCheckBox;
 
     @FXML
-    private PasswordField surnameField;
+    private TextField surnameField;
 
     @FXML
     private TextField usernameField;
+
+    @FXML
+    void initialize() {
+        DataBaseHandler dbHandler = new DataBaseHandler();
+
+        registerNewAccountButton.setOnAction(event -> {
+            System.out.println("hello");
+            dbHandler.signupUser(nameField.getText(), surnameField.getText(), usernameField.getText(),
+                                 passField.getText(), addressField.getText(), "Male");
+        });
+    }
 
 }

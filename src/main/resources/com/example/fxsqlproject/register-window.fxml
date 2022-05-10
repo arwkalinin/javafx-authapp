@@ -37,18 +37,18 @@
                   <Font name="Lucida Console" size="20.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="surnameField" layoutX="441.0" layoutY="81.0" prefHeight="25.0" prefWidth="245.0" promptText="surname" style="-fx-border-color: silver; -fx-border-radius: 5;">
-               <font>
-                  <Font name="Lucida Console" size="20.0" />
-               </font>
-            </PasswordField>
-            <PasswordField fx:id="addressField" layoutX="185.0" layoutY="137.0" prefHeight="37.0" prefWidth="502.0" promptText="adress" style="-fx-border-color: silver; -fx-border-radius: 5;">
-               <font>
-                  <Font name="Lucida Console" size="20.0" />
-               </font>
-            </PasswordField>
             <CheckBox fx:id="sexMaleCheckBox" layoutX="382.0" layoutY="187.0" mnemonicParsing="false" selected="true" text="Male" />
             <CheckBox fx:id="sexFemaleCheckBox" layoutX="441.0" layoutY="187.0" mnemonicParsing="false" text="Female" />
+            <TextField fx:id="surnameField" layoutX="441.0" layoutY="81.0" prefHeight="25.0" prefWidth="245.0" promptText="surname" style="-fx-border-color: silver; -fx-border-radius: 5;">
+               <font>
+                  <Font name="Lucida Console" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="addressField" layoutX="314.0" layoutY="136.0" prefHeight="25.0" prefWidth="245.0" promptText="address" style="-fx-border-color: silver; -fx-border-radius: 5;">
+               <font>
+                  <Font name="Lucida Console" size="20.0" />
+               </font>
+            </TextField>
             </children>
         </AnchorPane>
         <Label layoutX="14.0" layoutY="15.0" prefHeight="66.0" prefWidth="397.0" text="JavaFX Auth by SQL" textAlignment="CENTER" textFill="WHITE">
