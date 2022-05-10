@@ -15,9 +15,7 @@ public class DataBaseHandler extends Configs {
         return dbConnection;
     }
 
-    public void signupUser(String firstName, String lastName, String username,
-                           String password, String address, String gender) {
-        System.out.println("Trying to register");
+    public void signupUser(User user) {
         String insertToDB = "INSERT INTO " + Const.USER_TABLE + "(" +
                             Const.USERS_FIRSTNAME + "," + Const.USERS_LASTNAME + "," +
                             Const.USERS_USERNAME + "," + Const.USERS_PASSWORD + "," +
@@ -26,14 +24,14 @@ public class DataBaseHandler extends Configs {
 
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insertToDB);
-            prSt.setString(1, firstName);
-            prSt.setString(2, lastName);
-            prSt.setString(3, username);
-            prSt.setString(4, password);
-            prSt.setString(5, address);
-            prSt.setString(6, gender);
+            prSt.setString(1, user.getFirstName());
+            prSt.setString(2, user.getLastName());
+            prSt.setString(3, user.getUsername());
+            prSt.setString(4, user.getPassword());
+            prSt.setString(5, user.getAddress());
+            prSt.setString(6, user.getGender());
             prSt.executeUpdate();
-            System.out.println("Success");
+            System.out.println("Registration success!");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

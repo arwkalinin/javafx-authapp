@@ -38,12 +38,28 @@ public class RegisterController {
 
     @FXML
     void initialize() {
+        signUpNewUser();
+    }
+
+    private void signUpNewUser() {
         DataBaseHandler dbHandler = new DataBaseHandler();
 
         registerNewAccountButton.setOnAction(event -> {
-            System.out.println("hello");
-            dbHandler.signupUser(nameField.getText(), surnameField.getText(), usernameField.getText(),
-                                 passField.getText(), addressField.getText(), "Male");
+            String firstName = nameField.getText();
+            String lastName = surnameField.getText();
+            String username = usernameField.getText();
+            String pass = passField.getText();
+            String address = addressField.getText();
+            String gender = "";
+            if ((sexMaleCheckBox.isSelected() && sexFemaleCheckBox.isSelected()) || (!sexMaleCheckBox.isSelected() && !sexFemaleCheckBox.isSelected()))
+                gender = "Unknown";
+            else if (sexMaleCheckBox.isSelected())
+                gender = "Male";
+            else
+                gender = "Female";
+
+            User user = new User(firstName,lastName,username,pass,address,gender);
+            dbHandler.signupUser(user);
         });
     }
 
