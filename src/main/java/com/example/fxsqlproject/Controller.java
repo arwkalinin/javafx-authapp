@@ -1,5 +1,6 @@
 package com.example.fxsqlproject;
 
+import com.example.fxsqlproject.animations.Shake;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -40,20 +41,7 @@ public class Controller {
         });
 
         registerButton.setOnAction(event -> {
-            registerButton.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("register-window.fxml"));
-            try {
-                loader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.showAndWait();
-
+            openNewScene("register-window.fxml");
         });
     }
 
@@ -65,6 +53,7 @@ public class Controller {
         ResultSet resultSet = dbHandler.getUser(user);
 
         int counter = 0;
+
         try {
             while (resultSet.next()) {
                 counter++;
@@ -73,11 +62,32 @@ public class Controller {
             e.printStackTrace();
         }
 
-
         if (counter >= 1) {
             System.out.println("Login success.");
+            openNewScene("app.fxml");
+        }
+        else {
+            Shake userLoginAnimation = new Shake(loginField);
+            Shake passLoginAnimation = new Shake(passField);
+            userLoginAnimation.playShakeAnimation();
+            passLoginAnimation.playShakeAnimation();
         }
     }
 
+    public void openNewScene(String window) {
+        loginButton.getScene().getWindow().hide();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(window));
+        try {
+            loader.load();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
+    }
 
 }
