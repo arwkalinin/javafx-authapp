@@ -7,10 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class Controller {
 
@@ -57,7 +58,25 @@ public class Controller {
     }
 
     private void loginUser(String usernameInput, String passwordInput) {
-        System.out.println("You logged as " + usernameInput + " and " + passwordInput);
+        DataBaseHandler dbHandler = new DataBaseHandler();
+        User user = new User();
+        user.setUsername(usernameInput);
+        user.setPassword(passwordInput);
+        ResultSet resultSet = dbHandler.getUser(user);
+
+        int counter = 0;
+        try {
+            while (resultSet.next()) {
+                counter++;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        if (counter >= 1) {
+            System.out.println("Login success.");
+        }
     }
 
 

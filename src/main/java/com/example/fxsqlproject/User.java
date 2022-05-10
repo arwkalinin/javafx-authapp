@@ -8,14 +8,7 @@ public class User {
     private String address;
     private String gender;
 
-    public User() {
-        this.firstName = "No name";
-        this.lastName = "No lastname";
-        this.username = "No username";
-        this.password = "";
-        this.address = "No address";
-        this.gender = "No gender";
-    }
+    public User() {}
     public User(String firstName, String lastName, String username, String password, String address, String gender) {
         this.firstName = firstName;
         this.lastName = lastName;
